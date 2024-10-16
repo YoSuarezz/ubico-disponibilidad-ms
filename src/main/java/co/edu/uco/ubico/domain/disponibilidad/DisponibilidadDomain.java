@@ -3,6 +3,7 @@ package co.edu.uco.ubico.domain.disponibilidad;
 import co.edu.uco.ubico.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
 import co.edu.uco.ubico.domain.aula.AulaDomain;
+import org.mapstruct.Mapper;
 
 import java.time.LocalDateTime;
 
@@ -88,5 +89,7 @@ public class DisponibilidadDomain {
     private void setHoraFin(final String horaFin) {
         this.horaFin = ObjectHelper.getObjectHelper().getDefault(horaFin, TextHelper.getHour());
     }
+
+
 }
 
