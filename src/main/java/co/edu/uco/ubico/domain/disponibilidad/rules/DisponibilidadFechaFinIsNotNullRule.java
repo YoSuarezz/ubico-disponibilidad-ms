@@ -1,8 +1,9 @@
 package co.edu.uco.ubico.domain.disponibilidad.rules;
 
 import co.edu.uco.ubico.domain.DomainRule;
+import co.edu.uco.ubico.domain.disponibilidad.DisponibilidadDomain;
 
 import java.util.UUID;
 
-public interface DisponibilidadAulaIsNotNullRule extends DomainRule<UUID>  {
+public interface DisponibilidadFechaFinIsNotNullRule extends DomainRule<DisponibilidadDomain>  {
 }

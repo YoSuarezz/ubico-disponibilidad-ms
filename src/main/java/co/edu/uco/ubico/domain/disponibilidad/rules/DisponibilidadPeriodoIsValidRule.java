@@ -1,4 +1,7 @@
 package co.edu.uco.ubico.domain.disponibilidad.rules;
 
-public interface DisponibilidadPeriodoIsValidRule {
+import co.edu.uco.ubico.domain.DomainRule;
+import co.edu.uco.ubico.domain.disponibilidad.DisponibilidadDomain;
+
+public interface DisponibilidadPeriodoIsValidRule extends DomainRule<DisponibilidadDomain> {
 }
