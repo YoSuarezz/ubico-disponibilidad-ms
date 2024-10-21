@@ -1,5 +1,6 @@
 package co.edu.uco.ubico.domain.aula;
 
+import co.edu.uco.ubico.crosscutting.enums.AulaEstado;
 import co.edu.uco.ubico.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
 import co.edu.uco.ubico.domain.Domain;
@@ -16,10 +17,12 @@ public final class AulaDomain extends Domain {
     private BloqueDomain bloque;
     private TipoAulaDomain tipoDeAula;
     private int capacidad;
+    private AulaEstado estado;
 
     public AulaDomain(UUID id) {
         super(id);
         setName(name);
+        this.estado = AulaEstado.ACTIVA;
     }
 
     public final String getName() {

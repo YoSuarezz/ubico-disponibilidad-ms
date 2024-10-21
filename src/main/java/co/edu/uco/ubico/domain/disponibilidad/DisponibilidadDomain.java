@@ -1,5 +1,6 @@
 package co.edu.uco.ubico.domain.disponibilidad;
 
+import co.edu.uco.ubico.crosscutting.enums.DisponibilidadEstado;
 import co.edu.uco.ubico.crosscutting.helpers.TimeHelper;
 import co.edu.uco.ubico.domain.Domain;
 import co.edu.uco.ubico.domain.aula.AulaDomain;
@@ -13,6 +14,7 @@ public  final class DisponibilidadDomain extends Domain {
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
     private boolean disponible;
+    private DisponibilidadEstado estado;
 
     public DisponibilidadDomain(UUID id) {
         super(id);
@@ -20,6 +22,7 @@ public  final class DisponibilidadDomain extends Domain {
         this.fechaInicio = TimeHelper.getDefaultDateTime();
         this.fechaFin = TimeHelper.getDefaultDateTime();
         this.disponible = false;
+        this.estado = DisponibilidadEstado.DISPONIBLE;
     }
 
     public AulaDomain getAula() {
@@ -52,5 +55,13 @@ public  final class DisponibilidadDomain extends Domain {
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    public DisponibilidadEstado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(DisponibilidadEstado estado) {
+        this.estado = estado;
     }
 }

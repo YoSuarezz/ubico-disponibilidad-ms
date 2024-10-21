@@ -4,5 +4,5 @@ import co.edu.uco.ubico.domain.DomainRule;
 
 import java.util.UUID;
 
-public interface DisponibilidadAulaIsNotNullRule extends DomainRule<UUID>  {
+public interface DisponibilidadIdIsNotDefaultValueRule extends DomainRule<UUID> {
 }
