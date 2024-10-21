@@ -1,22 +1,15 @@
 package co.edu.uco.ubico.crosscutting.helpers;
 
-public final class ObjectHelper {
-	private static final ObjectHelper instance = new ObjectHelper();
-
+public class ObjectHelper {
 	private ObjectHelper() {
-		super();
+
 	}
 
-	public static final ObjectHelper getObjectHelper() {
-		return instance;
-	}
-
-	public final <T> boolean isNull(final T object) {
+	public static <O> boolean isNull(final O object) {
 		return object == null;
 	}
 
-	public final <T> T getDefault(final T object, final T defaultObject) {
+	public static <O> O getDefault(final O object, final O defaultObject) {
 		return isNull(object) ? defaultObject : object;
 	}
-
 }
