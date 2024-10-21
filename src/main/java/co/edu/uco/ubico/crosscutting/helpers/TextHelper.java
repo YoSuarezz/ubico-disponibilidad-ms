@@ -1,6 +1,6 @@
 package co.edu.uco.ubico.crosscutting.helpers;
 
-import static co.edu.uco.ubico.crosscutting.helpers.ObjectHelper.getObjectHelper;
+import co.edu.uco.ubico.crosscutting.helpers.ObjectHelper;
 
 public class TextHelper {
 

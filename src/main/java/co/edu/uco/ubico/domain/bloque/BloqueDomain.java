@@ -1,45 +1,24 @@
 package co.edu.uco.ubico.domain.bloque;
 
 import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
+import co.edu.uco.ubico.domain.Domain;
 
-public class BloqueDomain {
-    private int id;
-    private String nombre;
+import java.util.UUID;
+
+public final class BloqueDomain extends Domain {
+    private String name;
 
 
-    private BloqueDomain(final int id, final String nombre){
-        setId(id);
-        setNombre(nombre);
+    public BloqueDomain(UUID id) {
+        super(id);
+        setName(name);
     }
 
-    private BloqueDomain() {
-        setNombre(TextHelper.EMPTY);
+    public final String getName() {
+        return name;
     }
 
-    public static final BloqueDomain crear(final int id, final String nombre) {
-        return new BloqueDomain(id,nombre);
+    public final void setName(String name) {
+        this.name = name;
     }
-
-
-    public static final BloqueDomain crear() {
-        return new BloqueDomain();
-    }
-
-
-    public final int getId() {
-        return id;
-    }
-
-    public final String getNombre() {
-        return nombre;
-    }
-
-    private void setNombre(final String nombre) {
-        this.nombre = TextHelper.applyTrim(nombre);
-    }
-
-    private void setId(final int id) {
-        this.id = id;
-    }
-
 }
