@@ -1,12 +1,13 @@
 package co.edu.uco.ubico.domain.disponibilidad;
 
+import co.edu.uco.ubico.crosscutting.helpers.TimeHelper;
 import co.edu.uco.ubico.domain.Domain;
 import co.edu.uco.ubico.domain.aula.AulaDomain;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public final class DisponibilidadDomain extends Domain {
+public  final class DisponibilidadDomain extends Domain {
 
     private AulaDomain aula;
     private LocalDateTime fechaInicio;
@@ -15,10 +16,9 @@ public final class DisponibilidadDomain extends Domain {
 
     public DisponibilidadDomain(UUID id) {
         super(id);
-        // Valores predeterminados
         this.aula = null;
-        this.fechaInicio = null;
-        this.fechaFin = null;
+        this.fechaInicio = TimeHelper.getDefaultDateTime();
+        this.fechaFin = TimeHelper.getDefaultDateTime();
         this.disponible = false;
     }
 
