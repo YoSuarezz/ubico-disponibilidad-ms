@@ -1,4 +1,4 @@
-package co.edu.uco.ubico.disponibilidad.init;
+package co.edu.uco.ubico.init;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

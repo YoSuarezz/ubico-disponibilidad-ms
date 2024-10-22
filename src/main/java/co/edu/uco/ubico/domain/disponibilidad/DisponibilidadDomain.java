@@ -1,92 +1,67 @@
 package co.edu.uco.ubico.domain.disponibilidad;
 
-import co.edu.uco.ubico.crosscutting.helpers.ObjectHelper;
-import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
+import co.edu.uco.ubico.crosscutting.enums.DisponibilidadEstado;
+import co.edu.uco.ubico.crosscutting.helpers.TimeHelper;
+import co.edu.uco.ubico.domain.Domain;
 import co.edu.uco.ubico.domain.aula.AulaDomain;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-public class DisponibilidadDomain {
-    private int id;
-    private String nombre;
-    private LocalDateTime fecha;
-    private String horaInicio;
-    private String horaFin;
+public  final class DisponibilidadDomain extends Domain {
+
     private AulaDomain aula;
+    private LocalDateTime fechaInicio;
+    private LocalDateTime fechaFin;
+    private boolean disponible;
+    private DisponibilidadEstado estado;
 
-    private DisponibilidadDomain(final int id, final String nombre, final LocalDateTime fecha,
-                                 final String horaInicio, final String horaFin, final AulaDomain aula) {
-        setId(id);
-        setNombre(nombre);
-        setFecha(fecha);
-        setHoraInicio(horaInicio);
-        setHoraFin(horaFin);
-        setAula(aula);
+    public DisponibilidadDomain(UUID id) {
+        super(id);
+        this.aula = null;
+        this.fechaInicio = TimeHelper.getDefaultDateTime();
+        this.fechaFin = TimeHelper.getDefaultDateTime();
+        this.disponible = false;
+        this.estado = DisponibilidadEstado.DISPONIBLE;
     }
 
-    private DisponibilidadDomain() {
-        setNombre(TextHelper.EMPTY);
-        setFecha(LocalDateTime.now());
-        setHoraInicio(TextHelper.getHour());
-        setHoraFin(TextHelper.getHour());
-        setAula(AulaDomain.crear());
-    }
-
-    public static final DisponibilidadDomain crear(final int id, final String nombre, final LocalDateTime fecha,
-                                                   final String horaInicio, final String horaFin, final AulaDomain aula) {
-        return new DisponibilidadDomain(id, nombre, fecha, horaInicio, horaFin, aula);
-    }
-
-    public static final DisponibilidadDomain crear() {
-        return new DisponibilidadDomain();
-    }
-
-    public final int getId() {
-        return id;
-    }
-
-    public final String getNombre() {
-        return nombre;
-    }
-
-    public final LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public final String getHoraInicio() {
-        return horaInicio;
-    }
-
-    public final String getHoraFin() {
-        return horaFin;
-    }
-
-    public final AulaDomain getAula() {
+    public AulaDomain getAula() {
         return aula;
     }
 
-    private final void setId(final int id) {
-        this.id = id;
+    public void setAula(AulaDomain aula) {
+        this.aula = aula;
     }
 
-    private final void setNombre(final String nombre) {
-        this.nombre = TextHelper.applyTrim(nombre);
+    public LocalDateTime getFechaInicio() {
+        return fechaInicio;
     }
 
-    private void setAula(final AulaDomain aula) {
-        this.aula = ObjectHelper.getObjectHelper().getDefault(aula, AulaDomain.crear());
+    public void setFechaInicio(LocalDateTime fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
-    private void setFecha(final LocalDateTime fecha) {
-        this.fecha = ObjectHelper.getObjectHelper().getDefault(fecha, LocalDateTime.now());
+    public LocalDateTime getFechaFin() {
+        return fechaFin;
     }
 
-    private void setHoraInicio(final String horaInicio) {
-        this.horaInicio = ObjectHelper.getObjectHelper().getDefault(horaInicio, TextHelper.getHour());
+    public void setFechaFin(LocalDateTime fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
-    private void setHoraFin(final String horaFin) {
-        this.horaFin = ObjectHelper.getObjectHelper().getDefault(horaFin, TextHelper.getHour());
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public DisponibilidadEstado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(DisponibilidadEstado estado) {
+        this.estado = estado;
     }
 }
-

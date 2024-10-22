@@ -1,44 +1,24 @@
 package co.edu.uco.ubico.domain.tipoaula;
 
-import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
+import co.edu.uco.ubico.domain.Domain;
 
-public class TipoAulaDomain {
-    private int id;
-    private String nombre;
+import java.util.UUID;
 
+public class TipoAulaDomain extends Domain {
+    private String name;
 
-    private TipoAulaDomain(final int id, final String nombre){
-        setId(id);
-        setNombre(nombre);
-    }
+    public TipoAulaDomain(final UUID id) {
+        super(id);
+        setName(name);
 
-    private TipoAulaDomain() {
-        setNombre(TextHelper.EMPTY);
-    }
-
-    public static final TipoAulaDomain crear(final int id, final String nombre) {
-        return new TipoAulaDomain(id,nombre);
     }
 
 
-    public static final TipoAulaDomain crear() {
-        return new TipoAulaDomain();
+    public final String getName() {
+        return name;
     }
 
-
-    public final int getId() {
-        return id;
-    }
-
-    public final String getNombre() {
-        return nombre;
-    }
-
-    private void setNombre(final String nombre) {
-        this.nombre = TextHelper.applyTrim(nombre);
-    }
-
-    private void setId(final int id) {
-        this.id = id;
+    public final void setName(String name) {
+        this.name = name;
     }
 }
