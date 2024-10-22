@@ -1,6 +1,5 @@
 package co.edu.uco.ubico.domain.bloque;
 
-import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
 import co.edu.uco.ubico.domain.Domain;
 
 import java.util.UUID;

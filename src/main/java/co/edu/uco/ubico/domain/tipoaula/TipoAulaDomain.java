@@ -1,12 +1,16 @@
 package co.edu.uco.ubico.domain.tipoaula;
 
-import co.edu.uco.ubico.crosscutting.helpers.TextHelper;
+import co.edu.uco.ubico.domain.Domain;
 
-public class TipoAulaDomain {
+import java.util.UUID;
+
+public class TipoAulaDomain extends Domain {
     private String name;
 
-    public TipoAulaDomain(String name) {
+    public TipoAulaDomain(final UUID id) {
+        super(id);
         setName(name);
+
     }
 
 
