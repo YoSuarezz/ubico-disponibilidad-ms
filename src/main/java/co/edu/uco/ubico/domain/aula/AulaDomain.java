@@ -56,4 +56,12 @@ public final class AulaDomain extends Domain {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
+
+    public AulaEstado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(AulaEstado estado) {
+        this.estado = estado;
+    }
 }
