@@ -5,6 +5,8 @@ import co.edu.uco.ubico.domain.disponibilidad.DisponibilidadDomain;
 import co.edu.uco.ubico.infrastructure.secondaryadapters.entity.DisponibilidadEntity;
 
 public class DisponibilidadEntityMapper {
+    private DisponibilidadEntityMapper() {
+    }
 
     public static DisponibilidadEntity toEntity(DisponibilidadDomain domain) {
         if (domain == null) {
