@@ -8,6 +8,7 @@ import co.edu.uco.ubico.domain.bloque.BloqueDomain;
 import co.edu.uco.ubico.domain.tipoaula.TipoAulaDomain;
 
 import co.edu.uco.ubico.domain.tipoaula.TipoAulaDomain;
+import jdk.jshell.Snippet;
 
 import java.util.UUID;
 
@@ -24,6 +25,7 @@ public final class AulaDomain extends Domain {
         setName(name);
         this.estado = AulaEstado.ACTIVA;
     }
+
 
     public final String getName() {
         return name;
