@@ -1,4 +1,4 @@
-package co.edu.uco.ubico.infrastructure.secondaryadapters.entity;
+package co.edu.uco.ubico.application.secondaryports.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,11 +15,10 @@ public class TipoAulaEntity {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "descripcion")
+    private String descripcion;
 
-
-    // Getters y Setters
+    // Getters and Setters
     public UUID getId() {
         return id;
     }
@@ -28,12 +27,11 @@ public class TipoAulaEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-
 }

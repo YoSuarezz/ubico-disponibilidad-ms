@@ -1,4 +1,4 @@
-package co.edu.uco.ubico.infrastructure.secondaryadapters.entity;
+package co.edu.uco.ubico.application.secondaryports.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,10 +15,10 @@ public class BloqueEntity {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "nombre")
+    private String nombre;
 
-    // Getters y Setters
+    // Getters and Setters
     public UUID getId() {
         return id;
     }
@@ -27,11 +27,12 @@ public class BloqueEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
+
