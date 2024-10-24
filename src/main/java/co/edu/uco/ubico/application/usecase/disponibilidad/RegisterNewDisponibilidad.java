@@ -1,6 +1,5 @@
 package co.edu.uco.ubico.application.usecase.disponibilidad;
 
-import co.edu.uco.ubico.application.usecase.UseCaseWithReturn;
 import co.edu.uco.ubico.application.usecase.UseCaseWithoutReturn;
 import co.edu.uco.ubico.domain.disponibilidad.DisponibilidadDomain;
 
