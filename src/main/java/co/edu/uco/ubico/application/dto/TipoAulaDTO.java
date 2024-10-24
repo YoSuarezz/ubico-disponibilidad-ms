@@ -1,4 +1,4 @@
-package co.edu.uco.ubico.application.primaryports.dto;
+package co.edu.uco.ubico.application.dto;
 
 import java.util.UUID;
 
