@@ -8,17 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class RegisterNewDisponibilidadImpl implements RegisterNewDisponibilidad {
 
-    private final RegisterNewDisponibilidadRulesValidator rulesValidator;
-
-    public RegisterNewDisponibilidadImpl(RegisterNewDisponibilidadRulesValidator rulesValidator) {
-        this.rulesValidator = rulesValidator;
-    }
-
     @Override
-    public void execute(DisponibilidadDomain disponibilidad) {
-        // Validar las reglas antes de proceder con el registro
-        rulesValidator.validate(disponibilidad);
+    public void execute(DisponibilidadDomain domain) {
 
-        // Aquí se añadiría la lógica para registrar la disponibilidad, por ejemplo, persistirla en la base de datos
     }
 }
