@@ -12,7 +12,7 @@
     <artifactId>ubico-disponibilidad-ms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ubico-disponibilidad-ms</name>
-    <description>ubico-disponibilidad-ms</description>
+    <description>componente encargado de manejar la logica de negocio de todas las transacciones relacionadas con las aulas y su disponibilidad</description>
     <url/>
     <licenses>
         <license/>
